@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:fitsSystemWindows="true"
+    android:layout_marginBottom="64dp"
+    tools:context=".MainActivity">
+
+  <com.michalsvec.singlerowcalendar.calendar.SingleRowCalendar
+      android:id="@+id/main_single_row_calendar"
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:layout_marginEnd="16dp"
+      app:deselection="false"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toBottomOf="@+id/tvDate"
+      app:longPress="false"
+      app:multiSelection="false" />
+
+  <TextView
+      android:id="@+id/tvDate"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginStart="16dp"
+      android:layout_marginTop="16dp"
+      android:fontFamily="sans-serif-medium"
+      android:text="SELECT A DATE"
+      android:textColor="@color/grey"
+      android:textSize="24sp"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintTop_toTopOf="parent" />
+
+  <TextView
+      android:id="@+id/tvDay"
+      android:layout_width="wrap_content"
+      android:layout_height="wrap_content"
+      android:layout_marginTop="2dp"
+      android:fontFamily="sans-serif-medium"
+      android:textColor="@color/lightGrey"
+      android:textSize="20sp"
+      app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+      app:layout_constraintStart_toEndOf="@+id/tvDate"
+      app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+  <Button
+      android:id="@+id/btnRight"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginEnd="16dp"
+      android:background="@drawable/ic_arrow_right"
+      app:layout_constraintBottom_toBottomOf="@+id/tvDate"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintTop_toTopOf="@+id/tvDate" />
+
+  <Button
+      android:id="@+id/btnLeft"
+      android:layout_width="30dp"
+      android:layout_height="30dp"
+      android:layout_marginEnd="32dp"
+      android:background="@drawable/ic_arrow_left"
+      app:layout_constraintBottom_toBottomOf="@+id/btnRight"
+      app:layout_constraintEnd_toStartOf="@+id/btnRight"
+      app:layout_constraintTop_toTopOf="@+id/btnRight" />
+
+  <TextView
+      android:id="@+id/tvQuote"
+      android:layout_width="0dp"
+      android:layout_height="wrap_content"
+      android:paddingHorizontal="32dp"
+      android:paddingVertical="52dp"
+      android:layout_marginHorizontal="56dp"
+      android:layout_marginVertical="24dp"
+      android:gravity="center"
+      android:textAlignment="center"
+      android:textSize="16sp"
+      android:textStyle="bold|italic"
+      android:maxLines="3"
+      android:ellipsize="end"
+      app:layout_constraintStart_toStartOf="parent"
+      app:layout_constraintEnd_toEndOf="parent"
+      app:layout_constraintBottom_toBottomOf="parent"
+      tools:text="@tools:sample/lorem/random"/>
+
+  <ImageView
+      android:id="@+id/ivQuote"
+      android:layout_width="0dp"
+      android:layout_height="0dp"
+      android:src="@drawable/quote_background"
+      android:scaleType="fitXY"
+      app:layout_constraintStart_toStartOf="@+id/tvQuote"
+      app:layout_constraintEnd_toEndOf="@+id/tvQuote"
+      app:layout_constraintTop_toTopOf="@+id/tvQuote"
+      app:layout_constraintBottom_toBottomOf="@+id/tvQuote"
+      tools:text="@tools:sample/lorem/random"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
